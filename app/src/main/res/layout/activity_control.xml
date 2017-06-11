@@ -16,7 +16,9 @@
        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
        <!--
-       la propiedad de app es para que el toolbar quede siempre por delante del linearlayout
+       - el scrollview es para cuando se coloque el dispositivo de forma horizontal, permita
+         hacer scroll en la pantalla de ser necesario.
+       - la propiedad de app es para que el toolbar quede siempre por delante del linearlayout.
        -->
 
        <LinearLayout
