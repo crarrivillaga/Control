@@ -22,9 +22,7 @@
         <activity
             android:name=".view.OptionsActivity"
             android:label="@string/option_bar"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
