@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +30,8 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:padding="@dimen/opt_padding">
+                android:padding="@dimen/opt_padding"
+                android:onClick="goConsultar">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -54,7 +56,8 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:padding="@dimen/opt_padding">
+                android:padding="@dimen/opt_padding"
+                android:onClick="goModificar">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -90,7 +93,8 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:padding="@dimen/opt_padding">
+                android:padding="@dimen/opt_padding"
+                android:onClick="goEliminar">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -115,7 +119,8 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:padding="@dimen/opt_padding">
+                android:padding="@dimen/opt_padding"
+                android:onClick="goContacto">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -140,4 +145,4 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
