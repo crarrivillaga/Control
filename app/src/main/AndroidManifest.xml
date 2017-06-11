@@ -23,17 +23,24 @@
         <activity
             android:name=".view.OptionsActivity"
             android:label="@string/option_bar"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme">
 
         </activity>
+
 
         <activity
             android:name=".actions.ConsultaActivity"
             android:label="@string/consul_bar"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".actions.ConsultaActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".actions.ConsultaActivity"/>>
 
         </activity>
 
+        <!--
         <activity
             android:name=".actions.ModificarActivity"
             android:label="@string/modif_bar"
@@ -47,6 +54,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        -->
     </application>
 
 </manifest>

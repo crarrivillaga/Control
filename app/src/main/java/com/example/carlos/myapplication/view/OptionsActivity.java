@@ -21,19 +21,19 @@ public class OptionsActivity extends AppCompatActivity {
 
     public void goConsultar (View view){
         Intent intent = new Intent(this, ConsultaActivity.class);
-        //el primer paraetro es "en donde estoy", el segundo es "a donde voy"
+        //el primer parametro es "en donde estoy", el segundo es "a donde voy"
         startActivity(intent);
     }
 
     public void goModificar (View view){
         Intent intent = new Intent(this, ModificarActivity.class);
-        //el primer paraetro es "en donde estoy", el segundo es "a donde voy"
+        //el primer parametro es "en donde estoy", el segundo es "a donde voy"
         startActivity(intent);
     }
 
     public void goEliminar (View view){
         Intent intent = new Intent(this, EliminarActivity.class);
-        //el primer paraetro es "en donde estoy", el segundo es "a donde voy"
+        //el primer parametro es "en donde estoy", el segundo es "a donde voy"
         startActivity(intent);
     }
 

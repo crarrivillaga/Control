@@ -12,11 +12,9 @@ public class ConsultaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta);
-        showToolbar(getResources().getString(R.string.consul_bar));
+        showToolbar(getResources().getString(R.string.consul_bar), true);
     }
 
-    private void showToolbar(String string) {
-    }
 
     public void showToolbar(String title, boolean upButton){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
