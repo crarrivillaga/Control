@@ -12,6 +12,11 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
 
+//conexion a mysql
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
 public class ControlActivity extends AppCompatActivity {
 
     EditText eTUser;
