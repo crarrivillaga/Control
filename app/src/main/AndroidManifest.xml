@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ControlActivity"
             android:label="@string/app_name"
@@ -20,12 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.OptionsActivity"
             android:label="@string/option_bar"
-            android:theme="@style/AppTheme"></activity>
-
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".actions.ConsultaActivity"
             android:label="@string/consul_bar"
@@ -35,7 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".actions.ConsultaActivity" />
         </activity>
-
         <activity
             android:name=".actions.ModificarActivity"
             android:label="@string/modif_bar"
@@ -45,7 +41,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".actions.ModificarActivity" />
         </activity>
-
         <activity
             android:name=".actions.EliminarActivity"
             android:label="@string/elim_bar"
@@ -55,6 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".actions.EliminarActivity" />
         </activity>
+        <activity android:name=".actions.CrearActivity"></activity>
     </application>
 
 </manifest>

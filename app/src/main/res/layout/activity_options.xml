@@ -15,7 +15,7 @@
         android:gravity="center">
 
 
-        <!-- fila 1 -->
+         <!--fila 1-->
         <LinearLayout
             android:layout_width="347dp"
             android:layout_height="wrap_content"
@@ -28,25 +28,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/opt_margin"
+                android:layout_marginLeft="@dimen/opt_margin"
                 android:padding="@dimen/opt_padding"
-                android:onClick="goConsultar">
+                android:onClick="goCrear"
+                android:gravity="center">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_action_copy"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Consultar"
+                    android:drawableLeft="@drawable/black_plus_48px"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="@dimen/icon_margin"/>
+
+                <TextView
+                    android:layout_width="@dimen/width_name"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crear_bar"
                     android:textSize="@dimen/opt_font_size"
                     android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/color_text_black"/>
 
             </LinearLayout>
 
@@ -54,95 +57,138 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/opt_margin"
+                android:layout_marginLeft="@dimen/opt_margin"
                 android:padding="@dimen/opt_padding"
-                android:onClick="goModificar">
+                android:onClick="goConsultar"
+                android:gravity="center">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_action_copy"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Modificar"
+                    android:drawableLeft="@drawable/black_document_48px"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="@dimen/icon_margin"/>
+
+                <TextView
+                    android:layout_width="@dimen/width_name"
+                    android:layout_height="wrap_content"
+                    android:text="@string/consul_bar"
                     android:textSize="@dimen/opt_font_size"
                     android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/color_text_black"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- fila 2 -->
+         <!--fila 2-->
         <LinearLayout
             android:layout_width="347dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            tools:layout_editor_absoluteY="8dp"
-            tools:layout_editor_absoluteX="0dp">
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="@dimen/opt_margin"
+                android:layout_marginLeft="@dimen/opt_margin"
                 android:padding="@dimen/opt_padding"
-                android:onClick="goEliminar">
+                android:onClick="goModificar"
+                android:gravity="center">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_action_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/black_pencil_48px"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"/>
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="@dimen/icon_margin"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/width_name"
+                    android:layout_height="wrap_content"
+                    android:text="@string/modif_bar"
+                    android:textSize="@dimen/opt_font_size"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_text_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/opt_margin"
+                android:layout_marginLeft="@dimen/opt_margin"
+                android:padding="@dimen/opt_padding"
+                android:onClick="goEliminar"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/black_delete_48px"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="@dimen/icon_margin"/>
+
+                <TextView
+                    android:layout_width="@dimen/width_name"
                     android:layout_height="wrap_content"
                     android:text="Eliminar"
                     android:textSize="@dimen/opt_font_size"
                     android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textColor="@color/color_text_black"/>
 
             </LinearLayout>
 
-            <LinearLayout
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:padding="@dimen/opt_padding"
-                android:onClick="goContacto">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableLeft="@drawable/ic_action_copy"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="25dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contacto"
-                    android:textSize="@dimen/opt_font_size"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
-
-            </LinearLayout>
-
+                android:layout_gravity="center"
+                android:hint="Cerrar sesión"
+                android:textStyle="bold"
+                android:textColorHint="@color/color_text_blue"
+                android:background="white"
+                android:textSize="40px"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/blue_logout_rounded_left_48px"
+                android:drawablePadding="@dimen/drw_padding"
+                />
         </LinearLayout>
 
 
     </LinearLayout>
 
+
+
+
+    <!--
+    <GridView
+        android:id="@+id/opt_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="@dimen/col_width"
+        android:numColumns="2"
+        android:gravity="center">
+
+
+    </GridView>
+    -->
 
 </android.support.design.widget.CoordinatorLayout>
