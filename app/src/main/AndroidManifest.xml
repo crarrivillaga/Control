@@ -50,7 +50,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".actions.EliminarActivity" />
         </activity>
-        <activity android:name=".actions.CrearActivity"></activity>
+        <activity
+            android:name=".actions.CrearActivity"
+            android:label="@string/crear_bar"
+            android:parentActivityName=".actions.CrearActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".actions.CrearActivity" />>
+
+        </activity>
     </application>
 
 </manifest>

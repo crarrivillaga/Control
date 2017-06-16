@@ -8,5 +8,12 @@
     android:background="#fff"
     tools:context="com.example.carlos.myapplication.actions.ConsultaActivity">
 
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/white_plus_48px"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/add_btn_margin"/>
 </android.support.design.widget.CoordinatorLayout>
