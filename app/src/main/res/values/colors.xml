@@ -6,4 +6,5 @@
     <color name="options_color">#0D47A1</color>
     <color name="color_text_blue">#1D467A</color>
     <color name="color_text_black">#111</color>
+    <color name="color_text_white">#fff</color>
 </resources>

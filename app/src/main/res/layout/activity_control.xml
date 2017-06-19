@@ -71,17 +71,19 @@
                android:textStyle="bold"
                android:textColorHint="#fff"
                android:background="#1D467A"
-               android:textSize="40px"
+               android:textSize="25px"
                android:layout_marginTop="20dp"
                android:drawableLeft="@drawable/white_login_rounded_right_48px"
                android:drawablePadding="@dimen/drw_padding"
                android:padding="10dp"
+
                />
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
+               android:gravity="center"
                android:drawableLeft="@drawable/ic_language"
                android:text="SeguridadArce"
                android:textColor="@color/color_text_blue"

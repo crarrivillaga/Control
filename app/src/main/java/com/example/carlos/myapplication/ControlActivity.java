@@ -1,5 +1,6 @@
 package com.example.carlos.myapplication;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,24 +16,36 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
 
-//conexion a firebase
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.example.carlos.myapplication.view.OptionsActivity;
+
+import java.util.HashMap;
+import java.util.Map;
+
+//conexion a firebase
+/*import com.example.carlos.myapplication.view.OptionsActivity;
 import com.example.carlos.myapplication.objects.FirebaseReferences;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-
+import com.google.firebase.database.FirebaseDatabase;*/
 
 public class ControlActivity extends AppCompatActivity {
 
     EditText eTUser;
     EditText eTPassword;
     Button  buttonPanel;
-    //private DatabaseReference DatabaseReference_myRef;
 
-    FirebaseAuth.AuthStateListener mAuthListener;
+    JsonObjectRequest array;
+    RequestQueue mRequestQueue;
+    private final String url = "http://192.168.1.103:8080/rest_api/public/api/v1/iniciarSesion";
+    private final String TAG = "Testing";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,58 +54,53 @@ public class ControlActivity extends AppCompatActivity {
 
         eTUser = (EditText) findViewById(R.id.eTUser);
         eTPassword = (EditText) findViewById(R.id.eTPassword);
-        buttonPanel = (Button) findViewById(R.id.buttonLogin);
+        buttonPanel = (Button) findViewById(R.id.buttonPanel);
 
         buttonPanel.setOnClickListener(new View.OnClickListener() {
-
             @Override
-            public void onClick(View view) {
-                //VerificarLogin(eTUser.getText().toString().toLowerCase(),eTPassword.getText().toString().toLowerCase());
-                String userLog = eTUser.getText().toString();
-                String passLog = eTPassword.getText().toString();
-                LogIn(userLog,passLog);
+            public void onClick(View v) {
+                mRequestQueue = VolleySingleton.getInstance().getmRequestQueue();
+                StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        String token = response;
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> map = new HashMap<String, String>();
+                        map.put("email", eTUser.getText().toString());
+                        map.put("password", eTPassword.getText().toString());
+                        return map;
+                    }
+
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("Content-Type","application/x-www-form-urlencoded");
+                        return params;
+                    }
+                };
+                mRequestQueue.add(request);
+               // VerificarLogin(eTUser.getText().toString().toLowerCase(),eTPassword.getText().toString().toLowerCase());
             }
         });
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
-                FirebaseUser user =  firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Log.i("SESION", "sesion iniciada con email: " + user.getEmail());
-
-                }else{
-                    Log.i("SESION", "sesion cerrada");
-                }
-            }
-        };
-
-        //firebase database
-        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference_myRef = database.getReference(FirebaseReferences.Control_Reference);*/
-
+        Intent intent = new Intent(this, OptionsActivity.class);
+        //el primer parametro es "en donde estoy", el segundo es "a donde voy"
+        startActivity(intent);
     }
 
-    private void LogIn(String user, String password){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(user,password);
-    }
-
-    /*public void VerificarLogin(String user, String password) {
+    /*
+    public void VerificarLogin(String user, String password) {
         Toast.makeText(this, "El usuario es:"+user+"y la contraseña es:", Toast.LENGTH_SHORT).show();
-    }*/
 
-    protected void onStar() {
-        super.onStart();
-        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
     }
-
-    protected void onStop() {
-        super.onStop();
-        if (mAuthListener != null){
-            FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
-        }
-    }
-
-
+    */
 }

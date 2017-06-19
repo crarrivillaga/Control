@@ -16,4 +16,6 @@
         android:src="@drawable/white_plus_48px"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/add_btn_margin"/>
+
+
 </android.support.design.widget.CoordinatorLayout>

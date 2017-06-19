@@ -8,4 +8,5 @@
     <dimen name="width_name">100dp</dimen>
     <dimen name="icon_margin">6dp</dimen>
     <dimen name="add_btn_margin">25dp</dimen>
+    <dimen name="field_padding">10dp</dimen>
 </resources>

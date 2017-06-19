@@ -12,14 +12,15 @@
         android:layout_width="384dp"
         android:layout_height="511dp"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:gravity="center">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginTop="-20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="60dp"
             android:src="@drawable/arcelogo"
             />
 
